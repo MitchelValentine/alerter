@@ -1,4 +1,5 @@
-
+local final = {}
+local init = {} --will be retreived from github
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 local notif = function(Title,Message,Length,Icon)
@@ -24,9 +25,12 @@ end
 -- INIT DATA
 print("Receiving data from GitHub")
 notif("Retreiving Data...","Retreiving data from server.")
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/MitchelValentine/alerter/master/blacklist.txt'),true))()
+local data = HttpService:JSONDecode(game:HttpGet('https://raw.githubusercontent.com/MitchelValentine/alerter/master/blacklist.txt'))
 print("Initializing Data...")
 notif("LoggerWatch Started","Parsing player list")
+
+
+
 for index,value in pairs(init) do
 	if type(value) == "string" then
 		final[index] = GetId(value)
@@ -49,6 +53,10 @@ end
 print("End of GetChildren")
 for index,value in pairs(final) do
 	print(index.." is "..value)
+end
+
+for i,v in pairs(init) do
+    print(tostring(v))
 end
 Players.PlayerAdded:Connect(function(Player)
 	for index2,value2 in final do
