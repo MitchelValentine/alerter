@@ -22,11 +22,9 @@ local function alert()
 end
 
 -- INIT DATA
-
-local init = {"6s8k","Pxrti","logging_audios","x9ed","SRpandaPH","825z","uqicz","Abffection","XOXSleepXOX","plaisoundz","thereaper7590","xElement","sf_vz","SamTheGamer3456","du_xl","emptypods","2PlaMMyTH","Qtavy","LIL_LOKE","ThipThip2013_TH","aleztby10","iEXLIMEA","SaintPinkcano"}
-local final = {}
-
-
+print("Receiving data from GitHub")
+notif("Retreiving Data...","Retreiving data from server.")
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/MitchelValentine/alerter/master/blacklist.txt'),true))()
 print("Initializing Data...")
 notif("LoggerWatch Started","Parsing player list")
 for index,value in pairs(init) do
