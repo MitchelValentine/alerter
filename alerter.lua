@@ -64,7 +64,7 @@ end--]]
 
 
 Players.PlayerAdded:Connect(function(Player)
-	for index2,value2 in final do
+	for index2,value2 in pairs(final) do
 		if GetId(Player) == value2 then
 			alert()
 		end
