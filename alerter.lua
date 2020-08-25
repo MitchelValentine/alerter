@@ -53,6 +53,15 @@ for index,value in next, game.Players:GetChildren() do
 		--print(index.." and "..index2)
 	end
 end
+
+for index,value in next, game.Players:GetChildren() do
+	value.Chatted:Connect(function(Chat)
+		if Chat == "I am a CyAdmin User" or Chat == "Hey I'm a cyrus' streets admin user1" then 
+			alert()
+		end
+	end)
+end
+
 print("End of GetChildren")
 --[[for index,value in pairs(final) do
 	print(index.." is "..value)
@@ -69,4 +78,12 @@ Players.PlayerAdded:Connect(function(Player)
 			alert()
 		end
 	end
+end)
+
+Players.PlayerAdded:Connect(function(Player)
+	Player.Chatted:Connect(function(Chat)
+		if Chat == "I am a CyAdmin User" or Chat == "Hey I'm a cyrus' streets admin user1" then 
+			alert()
+		end
+	end)
 end)
